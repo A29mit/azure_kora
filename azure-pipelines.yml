@@ -9,13 +9,9 @@ trigger:
 pool: MyComputerAgent
 strategy:
   matrix:
-    Python35:
-      PYTHON_VERSION: '3.5'
-    Python36:
-      PYTHON_VERSION: '3.6'
-    Python37:
-      PYTHON_VERSION: '3.7'
-  maxParallel: 3
+    Python39:
+      PYTHON_VERSION: '3.5.4'
+    
 
 steps:
 - task: UsePythonVersion@0
@@ -31,7 +27,7 @@ steps:
       """Search all subdirectories for `manage.py`."""
       from glob import iglob
       from os import path
-      # Python >= 3.5
+      # Python >= 3.5.4
       manage_py = next(iglob(path.join('**', 'manage.py'), recursive=True), None)
       if not manage_py:
           raise SystemExit('Could not find a Django project')
