@@ -19,5 +19,12 @@ steps:
     allowUnstable: true
     addToPath: true
     architecture: 'x64'
+
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
     
     
