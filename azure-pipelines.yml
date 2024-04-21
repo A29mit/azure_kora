@@ -20,6 +20,12 @@ steps:
     addToPath: true
     architecture: 'x64'
 
+- script: |
+    # Commands to build your Python project and generate output files
+    # For example, if you're using pip:
+    pip install .
+  displayName: 'Build'
+
 
 - task: PublishBuildArtifacts@1
   inputs:
